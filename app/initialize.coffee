@@ -14,6 +14,7 @@ require 'models/Document'
 
 
 # ===== Controllers =====
+require 'controllers/DocumentController'
 require 'controllers/DocumentsController'
 
 
