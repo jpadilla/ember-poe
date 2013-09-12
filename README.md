@@ -1,7 +1,7 @@
 # Poe
 This is an Ember demo application assignment for the [Puerto Rico Ember.js User Group](https://www.facebook.com/groups/prember/). It's a very simple Markdown document editor built on top of [Brunch with Ember Reloaded](https://github.com/gcollazo/brunch-with-ember-reloaded) skeleton for [Brunch](http://brunch.io).
 
-**Demo**: [ember-poe]()
+**Demo**: [ember-poe](http://jpadilla.github.io/ember-poe/)
 
 ## Start here
 Get Brunch.
