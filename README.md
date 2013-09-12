@@ -4,8 +4,8 @@ This is an Ember demo application assignment for the [Puerto Rico Ember.js User 
 **Demo**: [ember-poe](http://jpadilla.github.io/ember-poe/)
 
 ## Screenshots
-![Documents](http://d1zjcuqflbd5k.cloudfront.net/files/acc_2181/bIgM?response-content-disposition=inline;%20filename=Screen%20Shot%202013-09-12%20at%2012.11.38%20AM.png;%20filename*=UTF-8%27%27Screen%20Shot%202013-09-12%20at%2012.11.38%20AM.png&Expires=1378959232&Signature=OCe6c0zThWVPKkUAlLPpsZsPYpZQ18ZG~dl962DRPb2gH1oOlw-iad~GgZTI1gBGHLSOC~I~aX9q7fNJrSW9iDbF3ClBLZIDQzbp8potXR3LWo7HG~Mc5FOdI8zl7-oRgCy0bfygYSd94TV4URklVU8WSBqFXWETTqnLNVzixA0_&Key-Pair-Id=APKAJTEIOJM3LSMN33SA)
-![Document](http://d1zjcuqflbd5k.cloudfront.net/files/acc_2181/Z3WY?response-content-disposition=inline;%20filename=Screen%20Shot%202013-09-12%20at%2012.12.08%20AM.png;%20filename*=UTF-8%27%27Screen%20Shot%202013-09-12%20at%2012.12.08%20AM.png&Expires=1378959214&Signature=ZwB~6JBGOe-QR8xepbQL5s08xewH82fLJCD9XRhXeXX1YME22bWrljQhwKcInrMdmIeJyvFX0~lbhiU-0y~HWM3223nj6-NJG85w4BTzVdaj0pdTABMwMk-DBMiKCn6XAAJJ1zUTIy4sc438KoXZ3fjLeOSNnHP~tYUvVWhDIb8_&Key-Pair-Id=APKAJTEIOJM3LSMN33SA)
+![Documents](https://www.evernote.com/shard/s29/sh/7f7dab70-9a7c-4aae-89ba-95fce90f0887/b8e23a055448144a947b7c35650218f3/deep/0/Screen%20Shot%202013-09-12%20at%2012.11.38%20AM.png)
+![Document](https://www.evernote.com/shard/s29/sh/a7e03a67-e9fd-4179-8832-99c78ec552a4/af5ab1cd2fb81b729fe1fb226bac8755/deep/0/Screen%20Shot%202013-09-12%20at%2012.12.08%20AM.png)
 
 ## Start here
 Get Brunch.
