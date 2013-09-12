@@ -1,0 +1,15 @@
+<div class="documents">
+    <div class="header">
+        <h1 class="logo">Poe</h1>
+        {{#link-to 'documents_new' class='create-document-link'}}Create{{/link-to}}
+    </div>
+    <ul class="documents-list">
+        {{#each controller}}
+            {{#link-to "document" this tagName="li" class="documents-list-item" href=false}}
+                <a href="#" class="document-title" {{bindAttr href="view.href"}}>{{title}}</a>
+                <a href="#" class="document-destroy" {{action "destroyRecord" this bubbles=false}}>x</a>
+                <span class="document-date">Updated {{date updatedAt}}</span>
+            {{/link-to}}
+        {{/each}}
+    </ul>
+</div>

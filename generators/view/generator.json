@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "from": "view.coffee.hbs",
+      "to": "app/views/{{#camelize}}{{name}}{{/camelize}}View.coffee"
+    }
+  ],
+  "dependencies": []
+}

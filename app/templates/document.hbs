@@ -1,0 +1,25 @@
+<div class="document">
+    <div class="left-pane">
+        <form class="form-inline" role="form">
+            {{#if controller.isCreating}}
+                <a href="#" class="btn btn-default pull-left" {{action "cancelNewRecord" this}}>&larr; Go back</a>
+            {{else}}
+                {{#link-to 'documents' class="btn btn-default pull-left"}} &larr; Go back{{/link-to}}
+            {{/if}}
+            <div class="pull-right">
+                <div class="form-group">
+                    {{view Ember.TextField valueBinding="title" class="form-control"}}
+                </div>
+                <button class="btn btn-primary" {{bindAttr disabled="isProcessing"}}{{action 'save'}}>Save and Close</button>
+                <button class="btn btn-danger" {{action "destroyRecord" this}}>Delete</button>
+            </div>
+            {{view Ember.TextArea valueBinding="body"}}
+        </form>
+    </div>
+    <div class="right-pane">
+        <h1>{{title}}</h1>
+        <div class="markdown">
+            {{markdown body}}
+        </div>
+    </div>
+</div>
