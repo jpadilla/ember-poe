@@ -268,7 +268,7 @@ var App;
 
 App = require('config/app');
 
-module.exports = App.DocumentsNewRoute = Ember.Route.extend({
+module.exports = App.DocumentsNewRoute = App.DocumentRoute.extend({
   activate: function() {
     return document.title = 'New Document - Poe';
   },
@@ -297,17 +297,9 @@ module.exports = App.DocumentsNewRoute = Ember.Route.extend({
         return _this.transitionTo('documents');
       });
     },
-    destroyRecord: function(record) {
-      if (window.confirm('Are you sure you want to delete this document?')) {
-        record.deleteRecord();
-        if (record.currentState.stateName !== 'root.deleted.saved') {
-          record.save();
-        }
-        return this.transitionTo('documents');
-      }
-    },
     cancelNewRecord: function(record) {
       record.deleteRecord();
+      this.controllerFor('document').set('isCreating', false);
       return this.transitionTo('documents');
     }
   }
