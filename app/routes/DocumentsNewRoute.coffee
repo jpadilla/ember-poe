@@ -22,7 +22,7 @@ module.exports = App.DocumentsNewRoute = Ember.Route.extend
     actions:
         save: ->
             @modelFor('documents.new').save().then =>
-                @controllerFor('document').set 'isCreating', yes
+                @controllerFor('document').set 'isCreating', no
                 @transitionTo 'documents'
 
         destroyRecord: (document) ->
