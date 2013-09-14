@@ -1,6 +1,6 @@
 App = require 'config/app'
 
-module.exports = App.DocumentsNewRoute = Ember.Route.extend
+module.exports = App.DocumentsNewRoute = App.DocumentRoute.extend
     activate: ->
         document.title = 'New Document - Poe'
 
@@ -25,15 +25,7 @@ module.exports = App.DocumentsNewRoute = Ember.Route.extend
                 @controllerFor('document').set 'isCreating', no
                 @transitionTo 'documents'
 
-        destroyRecord: (record) ->
-            if window.confirm('Are you sure you want to delete this document?')
-                record.deleteRecord()
-
-                unless record.currentState.stateName is 'root.deleted.saved'
-                    record.save()
-
-                @transitionTo 'documents'
-
         cancelNewRecord: (record) ->
             record.deleteRecord()
+            @controllerFor('document').set 'isCreating', no
             @transitionTo 'documents'
