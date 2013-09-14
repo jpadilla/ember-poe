@@ -19,9 +19,11 @@
     <div class="right-pane">
         <div class="markdown-header">
             <h1>{{title}}</h1>
-            <button type="button" class="btn btn-default download-file-btn" {{action "downloadFile" this}}>
-                <span class="glyphicon glyphicon-save"></span> Download
-            </button>
+            {{#unless controller.isCreating}}
+                <button type="button" class="btn btn-default download-file-btn" {{action "downloadFile" this}}>
+                    <span class="glyphicon glyphicon-save"></span> Download
+                </button>
+            {{/unless}}
         </div>
         <div class="markdown">
             {{markdown body}}
