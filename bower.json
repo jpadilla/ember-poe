@@ -17,7 +17,8 @@
     "ember-data-shim": "1.0.0-beta.1",
     "showdown": "~0.3.1",
     "bootstrap": "~3.0.0",
-    "momentjs": "~2.1.0"
+    "momentjs": "~2.1.0",
+    "FileSaver": "*"
   },
   "overrides": {
     "handlebars": {

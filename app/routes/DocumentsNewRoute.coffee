@@ -25,15 +25,15 @@ module.exports = App.DocumentsNewRoute = Ember.Route.extend
                 @controllerFor('document').set 'isCreating', no
                 @transitionTo 'documents'
 
-        destroyRecord: (document) ->
+        destroyRecord: (record) ->
             if window.confirm('Are you sure you want to delete this document?')
-                document.deleteRecord()
+                record.deleteRecord()
 
-                unless document.currentState.stateName is 'root.deleted.saved'
-                    document.save()
+                unless record.currentState.stateName is 'root.deleted.saved'
+                    record.save()
 
                 @transitionTo 'documents'
 
-        cancelNewRecord: (document) ->
-            document.deleteRecord()
+        cancelNewRecord: (record) ->
+            record.deleteRecord()
             @transitionTo 'documents'
