@@ -282,7 +282,7 @@ module.exports = App.DocumentsNewRoute = Ember.Route.extend({
     save: function() {
       var _this = this;
       return this.modelFor('documents.new').save().then(function() {
-        _this.controllerFor('document').set('isCreating', true);
+        _this.controllerFor('document').set('isCreating', false);
         return _this.transitionTo('documents');
       });
     },
