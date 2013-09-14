@@ -238,14 +238,25 @@ module.exports = App.DocumentRoute = Ember.Route.extend({
         return _this.transitionTo('documents');
       });
     },
-    destroyRecord: function(document) {
+    destroyRecord: function(record) {
       if (window.confirm('Are you sure you want to delete this document?')) {
-        document.deleteRecord();
-        if (document.currentState.stateName !== 'root.deleted.saved') {
-          document.save();
+        record.deleteRecord();
+        if (record.currentState.stateName !== 'root.deleted.saved') {
+          record.save();
         }
         return this.transitionTo('documents');
       }
+    },
+    downloadFile: function(record) {
+      var blob, title;
+      blob = new Blob([record.get('body')], {
+        type: "text/plain;charset=utf-8"
+      });
+      title = record.get('title');
+      if (!/.md|.mkdn?|.mdown|.markdown/.test(title)) {
+        title += '.md';
+      }
+      return saveAs(blob, title);
     }
   }
 });
@@ -286,17 +297,17 @@ module.exports = App.DocumentsNewRoute = Ember.Route.extend({
         return _this.transitionTo('documents');
       });
     },
-    destroyRecord: function(document) {
+    destroyRecord: function(record) {
       if (window.confirm('Are you sure you want to delete this document?')) {
-        document.deleteRecord();
-        if (document.currentState.stateName !== 'root.deleted.saved') {
-          document.save();
+        record.deleteRecord();
+        if (record.currentState.stateName !== 'root.deleted.saved') {
+          record.save();
         }
         return this.transitionTo('documents');
       }
     },
-    cancelNewRecord: function(document) {
-      document.deleteRecord();
+    cancelNewRecord: function(record) {
+      record.deleteRecord();
       return this.transitionTo('documents');
     }
   }
@@ -317,11 +328,11 @@ module.exports = App.DocumentsRoute = Ember.Route.extend({
     return (this.get('store')).find('document');
   },
   actions: {
-    destroyRecord: function(document) {
+    destroyRecord: function(record) {
       if (window.confirm('Are you sure you want to delete this document?')) {
-        document.deleteRecord();
-        if (document.currentState.stateName !== 'root.deleted.saved') {
-          document.save();
+        record.deleteRecord();
+        if (record.currentState.stateName !== 'root.deleted.saved') {
+          record.save();
         }
         return this.transitionTo('documents');
       }
@@ -428,11 +439,15 @@ function program4(depth0,data) {
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextArea", {hash:{
     'valueBinding': ("body")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n        </form>\n    </div>\n    <div class=\"right-pane\">\n        <h1>");
+  data.buffer.push("\n        </form>\n    </div>\n    <div class=\"right-pane\">\n        <div class=\"markdown-header\">\n            <h1>");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "title", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("</h1>\n        <div class=\"markdown\">\n            ");
+  data.buffer.push("</h1>\n            <button type=\"button\" class=\"btn btn-default download-file-btn\" ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "downloadFile", "", {hash:{},contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">\n                <span class=\"glyphicon glyphicon-save\"></span> Download\n            </button>\n        </div>\n        <div class=\"markdown\">\n            ");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};

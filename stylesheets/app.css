@@ -7847,7 +7847,13 @@ td.visible-print {
   width: 55%;
 }
 .right-pane h1 {
+  display: inline-block;
   margin-top: 0;
+  line-height: 1;
+}
+.right-pane .download-file-btn {
+  display: inline-block;
+  float: right;
 }
 .right-pane .markdown {
   padding: 6px 0 0 0;
