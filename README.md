@@ -11,10 +11,16 @@ This is an Ember demo application assignment for the [Puerto Rico Ember.js User 
 ![Document](https://www.evernote.com/shard/s29/sh/a7e03a67-e9fd-4179-8832-99c78ec552a4/af5ab1cd2fb81b729fe1fb226bac8755/deep/0/Screen%20Shot%202013-09-12%20at%2012.12.08%20AM.png)
 
 ## Start here
-Get Brunch.
+Install Brunch.
 
 ```
 npm install -g brunch
+```
+
+Install Bower.
+
+```
+npm install -g bower
 ```
 Clone the repo, install dependencies, run.
 
@@ -22,6 +28,7 @@ Clone the repo, install dependencies, run.
 git clone git@github.com:jpadilla/ember-poe.git
 cd ember-poe
 npm install
+bower install
 brunch w -s
 ```
 Open [http://localhost:3333](http://localhost:3333).
